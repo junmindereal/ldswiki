@@ -12,8 +12,15 @@ export default function Home ({ blogs }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <PageLayout>
-        {JSON.stringify(blogs)}
-        <ListItem />
+        {blogs.map(blog =>
+          <ListItem
+            key={blog.slug}
+            title={blog.title}
+            summary={blog.summary}
+            launchAt={blog.launchAt}
+            author={blog.author}
+          />
+        )}
       </PageLayout>
     </>
   )

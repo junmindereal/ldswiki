@@ -1,27 +1,34 @@
-const ListItem = () => {
+const ListItem = ({ title, summary, launchAt, author }) => {
   return (
-    <article>
+    <article className='py-12'>
       <div className='space-y-5'>
         <div className='space-y-6'>
           <h2 className='text-2xl font-bold tracking-tight leading-8'>
-            <a href='#' className='text-gray-900'>
-              Garlic bread with cheese: What the science tells us
+            <a href='#' className='text-gray-900 hover:text-blue-500'>
+              {title}
             </a>
           </h2>
           <div className='text-gray-500 prose max-w-none'>
             <p>
-              For years parents have espoused the health benefits of eating garlic bread with cheese to their
-              children, with the food earning such an iconic status in our culture that kids will often dress
-              up as warm, cheesy loaf for Halloween.
+              {summary}
             </p>
-            <p>
-              But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases
-              springing up around the country.
-            </p>
+            {launchAt
+              ? <p>
+                {new Date(launchAt).toLocaleDateString(
+                  'en-us',
+                  {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  }
+                )}
+                </p>
+              : null}
+            <p>{author}</p>
           </div>
         </div>
         <div className='text-base font-medium leading-6'>
-          <a href='#' className='text-blue-500 hover:text-blue-600' aria-label='Read Garlic bread with cheese'>
+          <a href='#' className='text-blue-500 hover:text-blue-600' aria-label={`Read ${title}`}>
             Read More →
           </a>
         </div>
