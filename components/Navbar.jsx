@@ -6,7 +6,7 @@ const Navbar = () => {
       <div>
         <Link href='/'>
           <a className='inline-block text-4xl font-bold'>
-            <span className='text-blue-700'>LDS</span>
+            <span className='text-blue-500'>LDS</span>
             <span className='text-gray-900'>Wiki</span>
           </a>
         </Link>
@@ -14,12 +14,7 @@ const Navbar = () => {
       <ul className='flex items-center text-base'>
         <li>
           <Link href='/'>
-            <a className='inline-block px-3 py-1 text-gray-700 rounded hover:text-gray-900 hover:bg-gray-100'>Articles</a>
-          </Link>
-        </li>
-        <li>
-          <Link href='/'>
-            <a className='inline-block px-3 py-1 text-gray-700 rounded hover:text-gray-900 hover:bg-gray-100'>About</a>
+            <a className='inline-block px-3 py-1 font-medium text-gray-500 rounded hover:text-gray-900 hover:bg-gray-100'>About</a>
           </Link>
         </li>
       </ul>
