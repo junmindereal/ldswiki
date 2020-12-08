@@ -19,6 +19,11 @@ export default function Home ({ blogs }) {
             summary={blog.summary}
             launchAt={blog.launchAt}
             author={blog.author}
+            slug={blog.slug}
+            link={{
+              href: 'blog/[slug]',
+              as: `/blog/${blog.slug}`
+            }}
           />
         )}
       </PageLayout>

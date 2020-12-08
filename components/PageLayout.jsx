@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 
 const PageLayout = ({ children }) => {
   return (
-    <div className='max-w-3xl mx-auto'>
+    <div className='max-w-2xl mx-auto'>
       <Navbar />
       <main>
         {children}
