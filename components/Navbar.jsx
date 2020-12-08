@@ -5,7 +5,7 @@ const Navbar = () => {
   const router = useRouter()
   return (
     <>
-      <nav className='flex items-center justify-between pt-10'>
+      <nav className='flex items-center justify-start pt-10'>
         <div>
           {router.pathname === '/'
             ? (
@@ -23,20 +23,6 @@ const Navbar = () => {
               </Link>
             )}
         </div>
-        <ul className='flex items-center text-base'>
-          <li>
-            <Link href='/about'>
-              <a className={`
-              ${router.pathname === '/about'
-                  ? 'text-white bg-blue-500'
-                  : 'hover:text-gray-900 hover:bg-gray-100'} 
-                inline-block px-3 py-1 font-medium rounded
-              `}
-              > About
-              </a>
-            </Link>
-          </li>
-        </ul>
       </nav>
       {router.pathname === '/'
         ? null

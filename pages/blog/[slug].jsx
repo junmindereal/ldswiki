@@ -1,5 +1,6 @@
 import PageLayout from '@/components/PageLayout'
 import BlogHeader from '@/components/BlogHeader'
+import BlogContent from '@/components/BlogContent'
 import { getBlogBySlug, getAllBlogs } from '@/lib/api'
 
 const BlogDetail = ({ blog }) => {
@@ -10,7 +11,9 @@ const BlogDetail = ({ blog }) => {
         launchAt={blog.launchAt}
         author={blog.author}
       />
-      <main />
+      <main className='prose prose-sm lg:prose-lg'>
+        <BlogContent content={blog.content} />
+      </main>
     </PageLayout>
   )
 }

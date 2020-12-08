@@ -23,6 +23,11 @@ module.exports = {
       }
     }
   },
+  variants: {
+    extend: {
+      textColor: ['focus-within']
+    }
+  },
   plugins: [
     require('@tailwindcss/typography')
   ]

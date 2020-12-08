@@ -7,7 +7,7 @@ const ListItem = ({ title, summary, link }) => {
         <div className='space-y-2'>
           <h2 className='text-2xl font-bold tracking-tight leading-8'>
             <Link {...link}>
-              <a className='text-gray-900 hover:text-blue-500'>
+              <a className='text-gray-900 transition-colors hover:text-blue-500'>
                 {title}
               </a>
             </Link>
@@ -20,7 +20,7 @@ const ListItem = ({ title, summary, link }) => {
         </div>
         <div className='text-base font-medium leading-6'>
           <Link {...link}>
-            <a className='text-blue-500 hover:text-blue-600' aria-label={`Read ${title}`}>
+            <a className='text-blue-500 transition-colors hover:text-blue-600' aria-label={`Read ${title}`}>
               Read More →
             </a>
           </Link>
