@@ -11,7 +11,7 @@ const BlogDetail = ({ blog }) => {
         launchAt={blog.launchAt}
         author={blog.author}
       />
-      <main className='prose prose-sm lg:prose-lg'>
+      <main className='prose lg:prose-lg'>
         <BlogContent content={blog.content} />
       </main>
     </PageLayout>

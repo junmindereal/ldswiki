@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const ListItem = ({ title, summary, link }) => {
   return (
-    <article className='pt-12'>
+    <article className='pt-8 xl:pt-12'>
       <div className='space-y-4'>
         <div className='space-y-2'>
           <h2 className='text-2xl font-bold tracking-tight leading-8'>

@@ -22,10 +22,10 @@ export default function Home ({ blogs }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <PageLayout>
-        <div className='relative flex items-center text-gray-300 mt-14 group focus-within:text-blue-500'>
+        <div className='relative flex items-center mt-8 text-gray-300 xl:mt-14 group focus-within:text-blue-500'>
           <svg className='absolute w-6 h-6 stroke-current transition-colors' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' /></svg>
           <input
-            className='w-full py-3 pl-10 text-xl text-gray-900 placeholder-gray-300 border-b border-gray-300 transition-colors focus:outline-none focus:border-blue-500'
+            className='w-full py-3 pl-10 text-base text-gray-900 placeholder-gray-300 border-b border-gray-300 xl:text-xl transition-colors focus:outline-none focus:border-blue-500'
             aria-label='Search articles'
             placeholder='Search Articles'
             onChange={(e) => setSearchValue(e.target.value)}

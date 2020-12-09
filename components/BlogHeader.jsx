@@ -10,8 +10,8 @@ const BlogHeader = ({ title, launchAt, author }) => {
 
   return (
     <header className='pt-10 pb-4'>
-      <h1 className='text-5xl font-bold '>{title}</h1>
-      <p className='mt-6 text-gray-500'>
+      <h1 className='text-3xl font-bold xl:text-5xl '>{title}</h1>
+      <p className='mt-4 text-base text-gray-500 xl:mt-6 lg:text-base'>
         {date} by {author}
       </p>
     </header>
