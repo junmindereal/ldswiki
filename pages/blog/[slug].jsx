@@ -5,7 +5,7 @@ import { getBlogBySlug, getAllBlogs } from '@/lib/api'
 
 const BlogDetail = ({ blog }) => {
   return (
-    <PageLayout>
+    <PageLayout pageTitle={blog.title} description={blog.summary} slug={blog.slug}>
       <BlogHeader
         title={blog.title}
         launchAt={blog.launchAt}
