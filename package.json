@@ -10,13 +10,14 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.0.9",
-    "@tailwindcss/typography": "^0.3.1",
-    "autoprefixer": "^10.0.4",
     "next": "10.0.3",
-    "postcss": "^8.1.14",
-    "postcss-import": "^13.0.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.3.1",
+    "autoprefixer": "^10.1.0",
+    "postcss": "^8.2.1",
     "tailwindcss": "^2.0.1"
   }
 }
