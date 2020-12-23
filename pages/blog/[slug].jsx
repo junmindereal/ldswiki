@@ -1,9 +1,18 @@
+import {useRouter} from 'next/router'
 import PageLayout from '@/components/PageLayout'
 import BlogHeader from '@/components/BlogHeader'
 import BlogContent from '@/components/BlogContent'
-import { getBlogBySlug, getAllBlogs } from '@/lib/api'
+import {getBlogBySlug, getAllBlogs} from '@/lib/api'
 
-const BlogDetail = ({ blog }) => {
+const BlogDetail = ({blog}) => {
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return (
+      <PageLayout title="Loading..."></PageLayout>
+    )
+  }
+
   return (
     <PageLayout pageTitle={blog.title} description={blog.summary} slug={blog.slug}>
       <BlogHeader
@@ -18,19 +27,20 @@ const BlogDetail = ({ blog }) => {
   )
 }
 
-export async function getStaticProps ({ params }) {
+export async function getStaticProps({params}) {
   const blog = await getBlogBySlug(params.slug)
   return {
-    props: { blog }
+    props: {blog},
+    revalidate: 1
   }
 }
 
-export async function getStaticPaths () {
+export async function getStaticPaths() {
   const blogs = await getAllBlogs()
 
   return {
-    paths: blogs?.map(blog => ({ params: { slug: blog.slug } })),
-    fallback: false
+    paths: blogs?.map(blog => ({params: {slug: blog.slug}})),
+    fallback: true
   }
 }
 

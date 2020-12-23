@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import PageLayout from '@/components/PageLayout'
 import ListItem from '@/components/ListItem'
-import { getAllBlogs } from '@/lib/api'
+import {getAllBlogs} from '@/lib/api'
+import {useGetBlogs} from '@/actions'
 
-export default function Home ({ blogs }) {
+export default function Home({blogs: initialData}) {
   const pageTitle = 'LDS Wiki'
   const description = 'Common questions and answers of members of The Church of Jesus Christ of Latter-Day Saints'
   const [searchValue, setSearchValue] = useState('')
+  const {data: blogs, error} = useGetBlogs(initialData)
+
   const filteredBlogPosts = blogs
     .sort(
       (a, b) =>
@@ -15,6 +18,7 @@ export default function Home ({ blogs }) {
     .filter(blog =>
       blog.title.toLowerCase().includes(searchValue.toLowerCase())
     )
+
 
   return (
     <PageLayout pageTitle={pageTitle} description={description}>
@@ -47,7 +51,7 @@ export default function Home ({ blogs }) {
   )
 }
 
-export async function getStaticProps () {
+export async function getStaticProps() {
   const blogs = await getAllBlogs()
   return {
     props: {
